@@ -10,5 +10,5 @@
 			echo $challenge;
 			exit;
 		}
-    }
+  }
 ?>
