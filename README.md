@@ -38,7 +38,7 @@ Enter the following as requested:
 Once completed click "Verify and Save" and it will be verified.
 
 ## Step 3. Page, Subscription & Access Token
-In the next step, you will need to have the necessary subscription and access tokens set up for processing of messages. First go to the Facebook App you would have created.
+In this step, you will need to have the necessary subscription and access tokens set up for processing of messages. First go to the Facebook App you would have created.
 Under Products go to Messenger Settings. Under "Access Tokens" click "Add or Remove Pages". You will then be prompted to select a page to use this Chat Bot. If you do not
 have a page created, you can have one done and then repeat this process, else select your desired page. 
 
@@ -49,3 +49,33 @@ Lastly under "Access Tokens" click on the button "Generate Token" and copy your 
 ![](images/access_token.png)
 
 This will be required in order to process messages on your server.
+
+## Step 4. Programming the Message Backend
+In this step we will be creating the backend for processing of all messages sent through the Chat Bot. First you would need to have the necessary message data collected. We achieve this by collecting the JSON formatted response sent and extracting the id, message & payload as shown below:
+![](images/getting_message_data.png)
+
+Next we check the payload to determine the current message request. If not set, we default the to greeting message. We first check to see if the payload is set as greeting and we provide a menu for the user to select from the sample prompts as shown below:
+![](images/send_greeting.png)
+
+The menu system in this tutorial provides the following options:
+- Today's Date?
+- Tell me a Joke
+- Creator?
+
+If the user selects "Today's Date?", the system checks what is the current date using PHP date function and provides that as a response as shown below:
+![](images/send_date.png)
+
+If the user selects "Tell me a Joke", the system uses a free online API to generate a random joke and provides the joke setup, waits for a couple of seconds, then provides the punchline in a separate message as shown below:
+![](images/send_joke.png)
+
+Lastly if the user selects "Creator?", the system provides the name of the creator for this project as shown below:
+![](images/send_about.png)
+
+All of these messages are sent using PHP CURL requests which sends the nesessary data to the Facebook Graph API using the access_token for verification as shown below:
+![](images/curl_response.png)
+
+## Step 5. Testing & Moving to Production
+Once completed you would then be able to test this Chat Bot using the page selected earlier as shown below:
+![](images/chat_bot.png)
+
+After you would have finished testing and verifying your Chat Bot is complete, you can then go to the Facebook App and move the slider from "Development" to "Production".
