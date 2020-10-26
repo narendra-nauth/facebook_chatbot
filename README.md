@@ -58,9 +58,9 @@ Next we check the payload to determine the current message request. If not set, 
 ![](images/send_greeting.png)
 
 The menu system in this tutorial provides the following options:
-- Today's Date?
-- Tell me a Joke
-- Creator?
+- Today's Date? : Dynamic Data using PHP
+- Tell me a Joke : External Data using online API
+- Creator? : Static Data
 
 If the user selects "Today's Date?", the system checks what is the current date using PHP date function and provides that as a response as shown below:<br/>
 ![](images/send_date.png)
