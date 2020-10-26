@@ -62,7 +62,7 @@ The menu system in this tutorial provides the following options:
 - Tell me a Joke
 - Creator?
 
-If the user selects "Today's Date?", the system checks what is the current date using PHP date function and provides that as a response as shown below:
+If the user selects "Today's Date?", the system checks what is the current date using PHP date function and provides that as a response as shown below:<br/>
 ![](images/send_date.png)
 
 If the user selects "Tell me a Joke", the system uses a free online API to generate a random joke and provides the joke setup, waits for a couple of seconds, then provides the punchline in a separate message as shown below:
